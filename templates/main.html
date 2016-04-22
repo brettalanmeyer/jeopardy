@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+		<title>Jeopardy</title>
+		{% assets filters="cssmin", output="gen/all.css", "libraries/bootstrap/css/bootstrap.min.css", "stylesheets/all.css" %}
+			<link href="{{ ASSET_URL }}" rel="stylesheet">
+		{% endassets %}
+	</head>
+	<body>
+
+		<div id="body"></div>
+
+		<input type="hidden" name="entity" value="{{ entity }}" />
+
+		<a href="/activate-reset/" class="btn btn-warning btn-sm" style="position: absolute; right: 3px; bottom: 3px;">reset</a>
+
+		{% assets
+			filters="jsmin",
+			output="gen/all.js",
+			"libraries/jquery.min.js",
+			"libraries/socket.io.min.js",
+			"javascripts/main.js",
+			"javascripts/home.js",
+			"javascripts/board.js",
+			"javascripts/host.js",
+			"javascripts/player.js"
+		%}
+			<script type="text/javascript" src="{{ ASSET_URL }}"></script>
+		{% endassets %}
+
+	</body>
+</html>

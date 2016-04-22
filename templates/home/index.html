@@ -1,0 +1,21 @@
+
+<div class="container">
+
+	<!-- <h1>Jeopardy</h1> -->
+	{% if not entityData.hasBoard %}
+		<button class="btn home-option" data-type="board">Board</button>
+	{% endif %}
+	{% if not entityData.hasHost %}
+		<button class="btn home-option" data-type="host">Host</button>
+	{% endif %}
+	{% if not entityData.hasPlayer1 %}
+		<button class="btn home-option" data-type="player">Player</button>
+	{% endif %}
+	{% if not entityData.hasPlayer2 %}
+		<button class="btn home-option" data-type="player">Player</button>
+	{% endif %}
+	{% if not entityData.hasPlayer3 %}
+		<button class="btn home-option" data-type="player">Player</button>
+	{% endif %}
+
+</div>

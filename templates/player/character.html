@@ -1,1 +1,10 @@
-player-character.html
+
+<div class="container">
+
+	{% for character in characters %}
+		<button class="btn player-character-option">
+			<img src="/static/images/{{ character.image }}" />
+		</button>
+	{% endfor %}
+
+</div>
